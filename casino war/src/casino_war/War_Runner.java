@@ -35,7 +35,6 @@ public class War_Runner
 				for(int x = 1; x <= decks; x++)
 				{
 					cards.add(new Card(suit, value));
-					System.out.println(suit + value);
 				}
 					
 			}	
