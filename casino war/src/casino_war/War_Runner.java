@@ -5,25 +5,55 @@ import java.util.Collections;
 
 public class War_Runner 
 {
-	private static Shoe shoe;
+	private final int decks;
+	private ArrayList<Card> cards;
 	
-	public War_Runner() 
+	public War_Runner(int decks)
 	{
-		shoe = new Shoe(1);
+		this.decks = decks;
+		reset();
 	}
 	
-	public static Shoe PrintShoe()
+	public Card dealCard()
 	{
-		return shoe;
+		return cards.remove(cards.size() - 1);
+	}
+	
+	public int cardsLeft()
+	{
+		return cards.size();
+	}
+	
+	public void reset()
+	{
+		cards = new ArrayList<Card>();
+
+		for(String suit : new String[]{"H", "D", "S", "C"})
+		{
+			for(int value = 2; value <= 14; value++)
+			{
+				for(int x = 1; x <= decks; x++)
+				{
+					cards.add(new Card(suit, value));
+					System.out.println(suit + value);
+				}
+					
+			}	
+		}
 	}
 	
 	public static void main(String[] args)
-	{
-		String[] deck = new String[52];
-		for(int i = 0; i < deck.length; i++)
+	{	
+		for(String suit : new String[]{"H", "D", "S", "C"})
 		{
-			deck[i] = shoe.dealCard();
+			for(int value = 2; value <= 14; value++)
+			{
+				for(int x = 1; x <= 1; x++)
+				{
+					System.out.println(suit + value);
+				}
+					
+			}	
 		}
-		System.out.print(deck);
 	}
 }

@@ -29,7 +29,7 @@ public class Shoe
 		cards = new ArrayList<Card>();
 
 		for(String suit : new String[]{"H", "D", "S", "C"})
-			for(int value = 7; value <= 14; value++)
+			for(int value = 2; value <= 14; value++)
 				for(int x = 1; x <= decks; x++)
 					cards.add(new Card(suit, value));
 
